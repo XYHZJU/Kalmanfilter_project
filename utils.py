@@ -84,6 +84,10 @@ def cal_distance(box1, box2):
     return dis
 
 
+def calc_center(box_posterior):
+    box_center = ((int(box_posterior[0] + box_posterior[2]) // 2), int((box_posterior[1] + box_posterior[3]) // 2))
+    return box_center
+
 def xywh_to_xyxy(xywh):
     x1 = xywh[0] - xywh[2]//2
     y1 = xywh[1] - xywh[3]//2
